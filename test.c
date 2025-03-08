@@ -12,7 +12,6 @@ int rotateString(char *s, char *goal)
 
     for (int i = 0; i < len; i++)
     {
-        // ÒÆ¶¯
         top = s[0];
         for (int j = 0; j < len - 1; j++)
         {
@@ -22,7 +21,6 @@ int rotateString(char *s, char *goal)
 
         printf("%s\r\n", s);
 
-        // ÅÐ¶Ï
         for (int n = 0; n < len; n++)
         {
             if (s[n] != goal[n])
