@@ -55,5 +55,21 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "editor.fontSize": 25,
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.preferredHighContrastColorTheme": "Solarized Dark",
+  "workbench.preferredHighContrastLightColorTheme": "Solarized Dark",
+  "workbench.preferredLightColorTheme": "Solarized Dark",
+  "editor.tokenColorCustomizations": {
+
+  
+  },
+  "editor.semanticTokenColorCustomizations": {
+
+  },
+  "workbench.colorCustomizations": {
+    "editor.foreground": "#00ffea"
+  }
 }

@@ -1,6 +1,47 @@
 1.函数指针和指针函数
-①指向函数的指针 int add（int A,int B）{return A + B};
+①指向函数的指针 int add（int A,int B）{return A + B;}
+int (*ptr)(int,int) = &add;
+②返回值是指针的函数 int* add(void){}
 
-2.
+2.指针的大小(与编译器大小有关)
+32位4字节，64位8字节
 
-3.
+3.sizeof 与 strlen
+①sizeof是一个运算符，strlen是一个函数（string.h）
+②sizeof计算所占内存大小，strlen计算字符串长度
+ sizeof("\0")->2(\0\0)  strlen("\0")->0
+
+4.数组指针与指针数组
+①指向一个数组的指针，一个指针
+int (*ptr) [10]
+②一个数组，里面每个元素都是一个指针
+int* ptr [10]
+
+5.C语言的内存分配
+①静态存储区分配：静态变量，全局变量
+②栈上分配：函数中定义的局部变量
+③堆上分配：malloc(C),new(C++)
+
+6.结构体与联合体
+①struct：不同成员放在不同的地址中，大小为每个成员的大小之和
+typedef struct {int A,int B[5],int C} DATA;     20字节
+②uinon：共享一块地址，共用体大小为成员中占内存最大的大小
+union struct {int A,DATA B,int C} DATAS;        28字节
+
+7.野指针
+指向不可用内存的指针
+①创建时未赋值
+②指针被free和delete后未赋值为NULL
+③指针越界
+
+8.数组与链表
+①数组地址空间连续，链表地址空间随机
+②数组直接提供下标访问速度快
+③链表增删改查速度快方便
+
+9.宏定义返回最小值
+#define min(a,b) ((a)<=(b)?(a):(b))
+
+10.#include<>和#include""
+①<>编译器从标准库的路径搜索
+②""用户的工作路径搜索
