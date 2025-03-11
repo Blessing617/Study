@@ -1,2 +1,5 @@
-1.
+1.函数指针和指针函数
+①指向函数的指针 int add（int A,int B）{return A + B};
+
 2.
+3.
