@@ -115,18 +115,19 @@ P = &B      ;(√)
 
 21.C++中的类有几个访问权限
 ①共有的：成员声明为public时可以在类的外部进行访问
+②私有的：成员声明为private时可以在类的内部进行访问
+③受保护的: 成员声明为protected时可以在类的内部或者子类中进行访问
 class fun
 {
     public :
     int a;
+    private :
+    int b;
     fun(void)
     {
     }
 }
 
-②私有的
-
-③受保护的
 
 
 
