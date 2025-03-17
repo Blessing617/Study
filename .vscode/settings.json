@@ -81,5 +81,6 @@
     "other": "on",
     "comments": "off",
     "strings": "on"
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
