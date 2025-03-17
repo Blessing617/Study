@@ -296,12 +296,77 @@ bool ring_buffer_read(RingBuffer* rb,uint8_t* data)
 特性:一般与类名相同,没有返回值,可以有重载版本支持多种初始化方式
 ②析构函数
 作用:释放资源,清理操作
-特性:没有参数,没有返回值
+特性:没有参数,没有返回值,名称只能用~开头,不能重载
 
+40.大小端数据存储
+多字节的数据在内存中的存储方式,不同计算机中会使用不同的字节序来表示数据
+大端:高字节在低地址,低字节在高地址
+小端:高字节在高地址,低字节在低地址
 
+41.strcmp字符串比较函数
+int mystrcmp(const char* str1,const char* str2)
+{
+    while(*str1 && *str2)
+    {
+        if(*str1 != *str2)
+            return (*str1 - *str2);
+        str1++;
+        str2++;
+    }
+    return (*str1 - *str2);//相等对于零
+}
 
+42.系统调用
+用户和内核之间的接口,通过这个接口可以使用户空间访问内核空间
+直接调用内核空间十分不安全,内核崩溃
 
+43.strcat字符串连接函数
+char* mystrcat(char* dest,const cahr* src)
+{
+    char* ptr = dest;
+    while(*ptr!='\0')
+    {
+        ptr++;
+    }
+    while(*src!='\0')
+    {
+        *ptr = *src;
+        ptr++;
+        src++;
+    }
+    *ptr='\0';
+    return ptr;
+}
 
+44.FIFO
+应用:串口通信,信号采集,DMA,音频处理
+先进先出,减轻CPU负担
+软件(相当于环形缓冲区)
+硬件
 
+45.TCP和UDP通信的流程
+(1)TCP:
+//TCP客户端
+①socket函数创建套接字
+②connect连接服务器
+③使用read,write进行发送和读取数据(recv,send)
+④close关闭客户端
+//TCP服务器
+①socket函数创建套接字
+②bind函数绑定IP地址和端口号
+③listening去监听对应端口
+④accept等待客户端的连接
+⑤使用read,write进行发送和读取数据(recv,send)
+⑥close关闭服务器
 
-
+(1)UCP:
+//UCP客户端
+①socket函数创建套接字
+②sendto发送数据
+③recvfrom来接受服务器消息
+④close关闭客户端
+//UCP服务器
+①socket函数创建套接字
+②bind函数进行绑定
+③recvfrom来接受数据
+④close关闭客户端
