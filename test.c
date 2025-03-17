@@ -6,6 +6,6 @@
 
 int main(void)
 {
-    printf("Hello!\r\n");
+    printf("Hello!,SF\r\n");
     return 0;
 }
