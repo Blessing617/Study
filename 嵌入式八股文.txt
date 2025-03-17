@@ -370,3 +370,4 @@ char* mystrcat(char* dest,const cahr* src)
 ②bind函数进行绑定
 ③recvfrom来接受数据
 ④close关闭客户端
+
